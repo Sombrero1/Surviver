@@ -41,12 +41,16 @@ public class FightPerson extends Person implements Stats{
               break;
           case(3):
               step=3;
-              hpB-=hit;
+
+              hpB= hpB-hit;
+              System.out.println("У босса осталось: " +hpB);
+              break;
           case(4):
               if (kolvospec>0) {
                   step = 4;
                   kolvospec--;
                   hpB-=spec;
+                  System.out.println("У босса осталось: " +hpB);
               }
               else{
                   System.out.println("Спец. удары закончились. Повторите ход " +'\n'+'\n' );

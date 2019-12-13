@@ -4,7 +4,7 @@ public class Person extends Fight {
     protected String name="Player";
     protected String classOfPlayer="Default";
     protected int hpP=30;
-    protected int hit = 5;
+    protected int hit = 50;
     protected int spec=0;
     protected int kolvospec=0;
     protected int shield=3;
@@ -32,7 +32,7 @@ public class Person extends Fight {
                 break;
             case ("Bower"):
                 hpP = 25;
-                hit = 3;
+                hit = 30;
                 spec = 4;
                 kolvospec = 10;
                 shield = 2;
@@ -40,7 +40,7 @@ public class Person extends Fight {
 
             case ("Sworder"):
                 hpP=30;
-                hit=4;
+                hit=40;
                 spec=5;
                 kolvospec=30;
                 shield=5;

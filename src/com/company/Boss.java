@@ -5,10 +5,10 @@ public class Boss extends Fight implements Stats {
     protected int boss=0;
     protected int attack=0; // переключение
     protected String vid;
-    protected int hpB=100;
     protected int hit=5;
 
     public void Stats(){
+        System.out.println (vid +" и не хочет попытаться расслабиться");
 
         System.out.println("-------Stats__of__Boss " +vid  +" ----------");
         System.out.println("HP: " + hpB);
@@ -21,6 +21,9 @@ public class Boss extends Fight implements Stats {
 
     @Override
     public void Step(){
+
+        if (bossAttack){
+        Stats();
         while (true){
             attack=(int)(Math.random()*10%10);
             if (attack<=1) break;
@@ -32,6 +35,15 @@ public class Boss extends Fight implements Stats {
         }
         else {
             hpB+=5;
+
+        }
+        bossAttack=false;
+        }
+        else {
+            System.out.println();
+            System.out.println(vid +" внимательно смотрит на вас");
+            System.out.println();
+            bossAttack=true;
 
         }
 
