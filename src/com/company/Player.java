@@ -26,6 +26,8 @@ public class Player extends Person implements Stats{
      public void Step() {
         if (hpP<=0) {System.out.println("Вы умерли");
         while (true);}
+        if (hpP<10) System.out.println("\n DANGER! У вас только " + hpP +" hp \n");
+
         System.out.println("Делайте мудрый ход, " + name +'\n' +"-------------------------------------");
         System.out.println ("Menu:");
         System.out.println ("1. Показать статы");
@@ -44,7 +46,7 @@ public class Player extends Person implements Stats{
           case(2):
               step=2;
               hpP+=10;
-              System.out.println(name + "вы исцеляетесь на " + 10 +"hp! Теперь у вас " +hpP);
+              System.out.println(name + " вы исцеляетесь на " + 10 +"hp! Теперь у вас " +hpP);
               break;
           case(3):
               step=3;
