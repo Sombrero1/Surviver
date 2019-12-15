@@ -3,7 +3,6 @@ package com.company;
 public class Person extends Fight {
     protected String name="Player";
     protected String classOfPlayer="Default";
-    protected int hpP=30;
     protected int hit = 50;
     protected int spec=0;
     protected int kolvospec=0;

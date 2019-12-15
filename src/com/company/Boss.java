@@ -22,32 +22,33 @@ public class Boss extends Fight implements Stats {
     @Override
     public void Step(){
 
-        if (bossAttack){
-        Stats();
-        while (true){
-            attack=(int)(Math.random()*10%10);
-            if (attack<=1) break;
-        }
-        if (attack==1){
-            hpP-=hit;
 
+
+        attack=(int)(Math.random()*10%10);
+
+
+
+        if (attack>=3){
+            hpP-=hit;
+            System.out.println(vid + " наносит по вам удар, который отнимает " + hit +" hp");
+System.out.println(hpP);
 
         }
         else {
             hpB+=5;
+            System.out.println(vid + " решает полечить себя на " + 5 +" hp");
+            System.out.println("Теперь у него " + hpB);
+
 
         }
-        bossAttack=false;
-        }
-        else {
+
+
             System.out.println();
             System.out.println(vid +" внимательно смотрит на вас");
             System.out.println();
-            bossAttack=true;
 
-        }
 
-    };
+    }
 
 
 

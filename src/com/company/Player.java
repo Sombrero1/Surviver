@@ -2,13 +2,14 @@ package com.company;
 
 import java.util.Scanner;
 
-public class FightPerson extends Person implements Stats{
+public class Player extends Person implements Stats{
 
     protected int step=0;
 
     public void Stats(){
 
             System.out.println("-------Stats----------");
+            System.out.println("Class: " + classOfPlayer);
             System.out.println("HP: " + hpP);
             System.out.println("Обычный удар: " + hit);
             System.out.println("Cпециальный удар: " + spec);
@@ -23,6 +24,8 @@ public class FightPerson extends Person implements Stats{
 
 
      public void Step() {
+        if (hpP<=0) {System.out.println("Вы умерли");
+        while (true);}
         System.out.println("Делайте мудрый ход, " + name +'\n' +"-------------------------------------");
         System.out.println ("Menu:");
         System.out.println ("1. Показать статы");
@@ -34,23 +37,30 @@ public class FightPerson extends Person implements Stats{
       switch(in.nextInt()){
           case (1):
               Stats();
+              System.out.print("Напишите любой символ, чтобы продолжить:");
+              new java.util.Scanner(System.in).nextLine();
+              Step();
               break;
           case(2):
               step=2;
               hpP+=10;
+              System.out.println(name + "вы исцеляетесь на " + 10 +"hp! Теперь у вас " +hpP);
               break;
           case(3):
               step=3;
 
               hpB= hpB-hit;
-              System.out.println("У босса осталось: " +hpB);
+              System.out.println(name +" вы наносите боссу " + hit +" урона! Теперь у него " + hpB +" hp");
+
               break;
           case(4):
               if (kolvospec>0) {
                   step = 4;
                   kolvospec--;
                   hpB-=spec;
-                  System.out.println("У босса осталось: " +hpB);
+                  System.out.println(name +" вы наносите боссу " + spec +" урона! Теперь у него " + hpB +" hp.");
+                  System.out.println("Спецударов осталось: " + kolvospec);
+
               }
               else{
                   System.out.println("Спец. удары закончились. Повторите ход " +'\n'+'\n' );
@@ -62,7 +72,7 @@ public class FightPerson extends Person implements Stats{
 
 
 
-    }
+     }
 
 
 }
