@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Player extends Person implements Stats{
 
     protected int step=0;
+    private int g=0; // спец. удар
 
     public void Stats(){
 
@@ -31,11 +32,11 @@ public class Player extends Person implements Stats{
         System.out.println("Делайте мудрый ход, " + name +'\n' +"-------------------------------------");
         System.out.println ("Menu:");
         System.out.println ("1. Показать статы");
-        System.out.println ("2. Щит");
+        System.out.println ("2. Хил");
         System.out.println("3. Обычный удар");
         System.out.println("4. Специальный удар" +'\n');
       Scanner in=new Scanner(System.in);
-
+        if (g%8==0) kolvospec++;
       switch(in.nextInt()){
           case (1):
               Stats();
@@ -52,6 +53,7 @@ public class Player extends Person implements Stats{
               step=3;
 
               hpB= hpB-hit;
+              g++;
               System.out.println(name +" вы наносите боссу " + hit +" урона! Теперь у него " + hpB +" hp");
 
               break;

@@ -29,7 +29,8 @@ public class Boss extends Fight implements Stats {
         attack=(int)(Math.random()*10%10);
 
 
-
+        if (attack==0)System.out.println(vid +" наносит удар..... Но промазывает");
+        else
         if (attack>=3){
             System.out.println();
             hpP-=hit;
@@ -37,7 +38,7 @@ public class Boss extends Fight implements Stats {
 
 
         }
-        else {
+        else  {
             hpB+=5;
             System.out.println();
             System.out.println(vid + " решает полечить себя на " + 5 +" hp");
@@ -48,7 +49,9 @@ public class Boss extends Fight implements Stats {
 
 
             System.out.println();
+        if (attack>=2)
             System.out.println(vid +" внимательно смотрит на вас");
+        else System.out.println(vid + " ждёт вашего хода");
             System.out.println();
 
 
@@ -72,7 +75,7 @@ public class Boss extends Fight implements Stats {
            case (1):
                vid ="Berg";
                hpB=70;
-               hit=10;
+               hit=7;
                break;
        }
    }
