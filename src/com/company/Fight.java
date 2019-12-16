@@ -21,7 +21,7 @@ public class Fight {
          System.out.println("Обычный удар: " + hit);
          System.out.println("-------Stats----------");
 
-
+//f
 
       }
 
